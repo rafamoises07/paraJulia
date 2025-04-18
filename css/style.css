@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+    color: #c94f7c;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    margin-top: 40px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  .message {
+    margin: 30px auto;
+    max-width: 85%;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    background-color: #fff0f5;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: slideUp 1.5s ease-out;
+  }
+  .gallery, .final-message {
+    display: none;
+    animation: fadeIn 2s ease-in-out;
+  }
+  .gallery {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .photo-block {
+    background-color: #f594b4;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 90%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInPhoto 2s forwards;
+    display: none; /* As fotos começam ocultas */
+  }
+  .photo-block img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+  }
+  .caption {
+    margin-top: 10px;
+    font-style: italic;
+  }
+  button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff99c8;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e86ca4;
+  }
+  .final-message {
+    margin-top: 40px;
+    font-size: 1.5em;
+    color: #d63384;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+  }
+  footer {
+    margin: 50px 0;
+    font-size: 0.9em;
+    color: #999;
+    animation: fadeIn 2s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fadeInPhoto {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    transform: rotate(45deg);
+    animation: float 8s infinite;
+  }
+  .heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
